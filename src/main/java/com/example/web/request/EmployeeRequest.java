@@ -10,14 +10,30 @@ public class EmployeeRequest {
     private DepartmentRequest department;
 
     @JsonCreator
-    public EmployeeRequest(String name, LocalDate joinedDate, DepartmentRequest department){
+    public EmployeeRequest(String name, LocalDate joinedDate, Integer departmentId){
         this.name = name;
         this.joinedDate = joinedDate;
-        this.department = department;
+        this.department = new DepartmentRequest(departmentId);
     }
 
-//    public Employee convertToEntity(){
-//        return new Employee(name, joinedDate, department.getId());
-//    }
+    public String getName() {
+        return name;
+    }
 
+    public LocalDate getJoinedDate() {
+        return joinedDate;
+    }
+
+    public DepartmentRequest getDepartment() {
+        return department;
+    }
+
+    @Override
+    public String toString() {
+        return "EmployeeRequest{" +
+                "name='" + name + '\'' +
+                ", joinedDate=" + joinedDate +
+                ", department=" + department +
+                '}';
+    }
 }

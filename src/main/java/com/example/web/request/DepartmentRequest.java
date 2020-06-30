@@ -13,5 +13,12 @@ public class DepartmentRequest {
     public Integer getId() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        return "DepartmentRequest{" +
+                "id=" + id +
+                '}';
+    }
 }
 
